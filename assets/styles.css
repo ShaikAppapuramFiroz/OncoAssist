@@ -1,0 +1,302 @@
+/* Advanced Light SaaS Design System - Premium Glass Edition */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #6C63FF;
+    --secondary: #00D4FF;
+    --glass-blur: blur(20px);
+    --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+}
+
+/* Global Styles */
+.stApp {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* Advanced Content Hover Effects */
+p, li, .stMarkdown {
+    transition: all 0.3s ease;
+}
+
+p:hover, li:hover {
+    transform: translateX(5px);
+    filter: brightness(1.2);
+}
+
+/* Glassmorphism Container Hover */
+.glass-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-radius: 24px;
+    border: 2px solid #E2E8F0;
+    box-shadow: var(--card-shadow);
+    animation: fadeIn 0.8s ease-out;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+    border-color: var(--primary);
+}
+
+/* Result Card Hover */
+.result-card {
+    background: #FFFFFF;
+    border-radius: 24px !important;
+    padding: 2.5rem !important;
+    border: 2px solid #E2E8F0 !important;
+    border-left: 10px solid var(--primary) !important;
+    box-shadow: var(--card-shadow) !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.result-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.12) !important;
+}
+
+/* Animated Gradient Text Definition */
+@keyframes gradientText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.animated-gradient-text {
+    background-size: 200% auto !important;
+    animation: gradientText 3s linear infinite !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* Section Headings */
+.section-header {
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
+    margin: 1.5rem 0 1.2rem 0 !important;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid #F1F5F9;
+}
+
+/* Input Field Styling */
+.stNumberInput input, .stSelectbox div[data-baseweb="select"], .stTextInput input {
+    border-radius: 14px !important;
+    padding: 12px !important;
+    border: 2px solid #E2E8F0 !important;
+    background: #FFFFFF !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Labels visibility */
+label p {
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 0.6rem !important;
+}
+
+/* Focus effects */
+.stNumberInput input:focus, .stSelectbox div[data-baseweb="select"]:focus-within, .stTextInput input:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.1) !important;
+}
+
+/* Predict Button Styling */
+.stButton > button, .stFormSubmitButton > button {
+    width: 100% !important;
+    border-radius: 14px !important;
+    padding: 1.2rem !important;
+    background: linear-gradient(135deg, #6C63FF, #4F46E5) !important;
+    color: white !important;
+    font-weight: 800 !important;
+    font-size: 1.1rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    border: none !important;
+    box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2) !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    margin-top: 2.5rem !important;
+}
+
+.stButton > button:hover, .stFormSubmitButton > button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(108, 99, 255, 0.3) !important;
+    color: white !important;
+    background: linear-gradient(135deg, #4F46E5, #6C63FF) !important;
+}
+
+/* Sidebar Custom Styling */
+[data-testid="stSidebar"] {
+    background: #FFFFFF;
+    border-right: 1px solid #E2E8F0 !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #F8FAFC; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+/* Marquee Animation */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    padding: 3rem 0;
+    position: relative;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 3rem;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+}
+
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 1.5rem)); }
+}
+
+/* Team Member Card */
+.team-member-card {
+    width: 320px;
+    height: 400px;
+    background: white;
+    border-radius: 24px;
+    border: 2px solid #E2E8F0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: center;
+    padding: 0;
+}
+
+.team-member-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 30px 50px rgba(108, 99, 255, 0.15);
+    border-color: var(--primary);
+}
+
+.member-image-wrapper {
+    width: 100%;
+    height: 65%;
+    background: #F8FAFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.member-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.team-member-card:hover .member-image-wrapper img {
+    transform: scale(1.1);
+}
+
+.member-info {
+    padding: 1.5rem;
+}
+
+.member-name {
+    font-weight: 800 !important;
+    font-size: 1.25rem !important;
+    margin-bottom: 0.3rem !important;
+}
+
+.member-dept {
+    font-size: 0.85rem !important;
+    color: var(--primary) !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.member-inst {
+    font-size: 0.75rem !important;
+    color: #64748B !important;
+    font-weight: 500 !important;
+}
+
+/* Footer Styling */
+.footer-container {
+    width: 100%;
+    padding: 4rem 2rem 2rem 2rem;
+    background: #F8FAFC;
+    border-top: 1px solid #E2E8F0;
+    margin-top: 5rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    font-weight: 800 !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.footer-text {
+    color: #64748B !important;
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+}
+
+.footer-heading {
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.footer-link {
+    color: #475569 !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+    display: block !important;
+    margin-bottom: 0.8rem !important;
+    transition: color 0.3s ease !important;
+}
+
+.footer-link:hover {
+    color: var(--primary) !important;
+}
+
+.footer-bottom {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+    color: #94A3B8 !important;
+    font-size: 0.85rem !important;
+}
+
+/* Hide Streamlit Branding */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
